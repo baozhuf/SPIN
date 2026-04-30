@@ -6,7 +6,7 @@ import zipfile
 def get_args():
     parser = argparse.ArgumentParser("Pipeline to summarize AlphaFold3 results from the zip files that are downloaded from alphafoldserver.com")
 
-    parser.add_argument( "--af3_out_dir", type=str, required=True, help="The directiory contains running result zip files downloaded from alphafoldserver.com")
+    parser.add_argument( "--af3_zf_dir", type=str, required=True, help="The directiory contains running result zip files downloaded from alphafoldserver.com")
     parser.add_argument( "--summary_path", type=str, default="AF3Server_results_summary.csv", help="a csv file path to save the summarized AF3 results")
 
     args = parser.parse_args()
@@ -73,8 +73,10 @@ def extract_zf_res(af3_zf_dir, save_csv_path):
 
     return df
 
-opts = get_args()
-af3_zf_dir = opts.af3_zf_dir
-save_csv_path = opts.summary_path
 
-extract_zf_res(af3_zf_dir, save_csv_path)
+if __name__ == "__main__":
+    opts = get_args()
+    af3_zf_dir = opts.af3_zf_dir
+    save_csv_path = opts.summary_path
+    
+    extract_zf_res(af3_zf_dir, save_csv_path)
