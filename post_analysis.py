@@ -64,8 +64,8 @@ def extract_res_multimer(af3_out_dir, save_csv_path):
 
     return df
 
-opts = get_args()
-af3_out_dir = opts.af3_out_dir
-save_csv_path = opts.summary_path
-
-extract_res_multimer(af3_out_dir, save_csv_path)
+if __name__ == "__main__":
+    opts = get_args()
+    af3_out_dir = opts.af3_out_dir
+    save_csv_path = opts.summary_path
+    extract_res_multimer(af3_out_dir, save_csv_path)
