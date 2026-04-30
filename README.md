@@ -115,14 +115,32 @@ python post_analysis_AF3server.py \
 
 This script converts a FASTA file into a JSON specification compatible with AlphaFold Server workflows.  
 
-| Argument | Type | Required | Description |
-|---------|------|----------|-------------|
-| `--fa_path` | `str` | Yes | Path to the input FASTA file containing one or more protein sequences. |
-| `--json_out` | `str` | Yes | Output path for the generated JSON file. The file will contain all sequences and metadata formatted for AlphaFold Server submission. |
-| `--max_len` | `int` | No | Maximum allowed sequence length. Sequences longer than this value will be skipped or truncated depending on implementation. Useful for enforcing AlphaFold Server limits. |
-| `--min_len` | `int` | No | Minimum allowed sequence length. Sequences shorter than this value are ignored. |
-| `--verbose` | `store_true` | No | Enables detailed logging, including skipped sequences, parsing steps, and JSON structure summaries. |
-| `--overwrite` | `store_true` | No | Allows overwriting an existing JSON file at the output path. Without this flag, the script will stop if the file already exists. |
+| Argument | Type | Required | Default | Description |
+|---------|------|----------|---------|-------------|
+| `--fa1_path` | `str` | Yes | — | Absolute path to FASTA file 1. Required for all runs. |
+| `--fa2_path` | `str` | No | `None` | Absolute path to FASTA file 2. If omitted, only proteins from FASTA 1 are used. |
+| `--len_cutoff` | `int` | No | `1000` | Threshold separating *short* vs. *long* sequences. Long sequences require more memory. Allowed range: 1–9999. |
+| `--protein1_cnt` | `int` | No | `1` | Number of copies of each protein from FASTA 1. Allowed range: 1–199. |
+| `--protein2_cnt` | `int` | No | `1` | Number of copies of each protein from FASTA 2. Allowed range: 1–199. |
+| `--num` | `int` | No | `30` | Number of protein–protein pairs per JSON file. Allowed range: 1–999,999. |
+| `--today` | `str` | No | `"20250501"` | Date stamp used to name output directories and JSON files. Should match earlier steps for reproducibility. |
+| `--out_dir` | `str` | No | `"./"` | Output directory where JSON files will be written. |
+
+---
+
+## Example Usage
+
+```bash
+python prepare_json_from_fa.py \
+    --fa1_path proteins_A.fasta \
+    --fa2_path proteins_B.fasta \
+    --protein1_cnt 2 \
+    --protein2_cnt 3 \
+    --num 50 \
+    --len_cutoff 1200 \
+    --today 20250501 \
+    --out_dir ./json_batches/
+
 
 ---
 
