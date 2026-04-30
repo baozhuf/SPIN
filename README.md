@@ -94,7 +94,9 @@ python post_analysis_AF3server.py \
   --summary_path ./AF3_out/af3_results_summary.csv
 
 
-# 🧾 Script Argument Descriptions (spin.sh)
+# 🧾 Script Argument Descriptions 
+
+(spin.sh)
 | Flag | Description |
 |------|-------------|
 | `-a` | Slurm account name (required) |
@@ -107,6 +109,33 @@ python post_analysis_AF3server.py \
 | `-l` | AlphaFold3 model parameter directory (required) |
 | `-f` | CD-HIT cutoff (range: 0.4–1.0, default: 0.5) |
 | `-o` | Output directory (default: `./AF3_out`) |
+
+
+# Command‑Line Arguments for `prepare_json_from_fa.py`
+
+This script converts a FASTA file into a JSON specification compatible with AlphaFold Server workflows.  
+
+| Argument | Type | Required | Description |
+|---------|------|----------|-------------|
+| `--fa_path` | `str` | Yes | Path to the input FASTA file containing one or more protein sequences. |
+| `--json_out` | `str` | Yes | Output path for the generated JSON file. The file will contain all sequences and metadata formatted for AlphaFold Server submission. |
+| `--max_len` | `int` | No | Maximum allowed sequence length. Sequences longer than this value will be skipped or truncated depending on implementation. Useful for enforcing AlphaFold Server limits. |
+| `--min_len` | `int` | No | Minimum allowed sequence length. Sequences shorter than this value are ignored. |
+| `--verbose` | `store_true` | No | Enables detailed logging, including skipped sequences, parsing steps, and JSON structure summaries. |
+| `--overwrite` | `store_true` | No | Allows overwriting an existing JSON file at the output path. Without this flag, the script will stop if the file already exists. |
+
+---
+
+## Example Usage
+
+```bash
+python prepare_json_from_fa.py \
+    --fa_path input_sequences.fasta \
+    --json_out af3_input.json \
+    --max_len 2000 \
+    --min_len 20 \
+    --verbose
+
 
 
 # Reference
