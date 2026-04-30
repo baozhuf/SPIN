@@ -1,7 +1,5 @@
 <img width="3242" height="730" alt="image" src="https://github.com/user-attachments/assets/c6f3c978-a1dd-4fa9-9f0e-7099762c396c" />
 
-<img width="1622" height="499" alt="image" src="https://github.com/user-attachments/assets/4771d0c5-d934-45fa-ad8b-e33a29c470d2" />
-
 
 
 # 🧬 Pathogen-Host Protein Interaction Analysis Pipeline
@@ -39,6 +37,8 @@ git clone https://github.com/baozhuf/spin.git
 cd spin
 
 ## 🧪 Usage
+<img width="1622" height="499" alt="image" src="https://github.com/user-attachments/assets/d1514c16-4c61-4bf9-8a25-465498447fc3" />
+
 ### Scenario 1. Run the Full Pipeline with Slurm on UF HiPerGator computing platform
 bash all_in_one_final.sh \
   -a your_slurm_account \
