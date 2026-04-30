@@ -79,6 +79,9 @@ python prepare_json_from_fa.py \
   --today 20250501 \
   --out_dir ./output_jsons
 
+Docker image for JSON preparation is available at
+https://hub.docker.com/r/harshkhanna1304/spin-preprocessing 
+
 ## Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM, ipSAE, pDockQ)
 
 **AlphaFold3 outputs obtained from UF HiPerGator**
