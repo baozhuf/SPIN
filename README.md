@@ -132,34 +132,6 @@ This script converts a FASTA file into a JSON specification compatible with Alph
 
 ---
 
-## Example Usage
-
-```bash
-python prepare_json_from_fa.py \
-    --fa1_path proteins_A.fasta \
-    --fa2_path proteins_B.fasta \
-    --protein1_cnt 2 \
-    --protein2_cnt 3 \
-    --num 50 \
-    --len_cutoff 1200 \
-    --today 20250501 \
-    --out_dir ./json_batches/
-
-
----
-
-## Example Usage
-
-```bash
-python prepare_json_from_fa.py \
-    --fa_path input_sequences.fasta \
-    --json_out af3_input.json \
-    --max_len 2000 \
-    --min_len 20 \
-    --verbose
-
-
-
 # Reference
 
 bioRxiv 2026.04.21.719732; doi: https://doi.org/10.64898/2026.04.21.719732
