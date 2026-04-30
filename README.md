@@ -110,21 +110,39 @@ python post_analysis_AF3server.py \
 | `-f` | CD-HIT cutoff (range: 0.4–1.0, default: 0.5) |
 | `-o` | Output directory (default: `./AF3_out`) |
 
+# Command‑Line Arguments for `spin.sh`
+
+This SLURM‑based wrapper script launches the SPIN pipeline on UF HiPerGator.  
+It configures compute resources, input FASTA directories, AlphaFold3 model parameters, and output locations.
+
+| Flag | Required | Default | Description |
+|------|----------|---------|-------------|
+| `-a` | Yes | — | SLURM account name used for job submission. |
+| `-e` | Yes | — | Email address for SLURM job notifications. |
+| `-c` | No | `4` | Number of CPUs allocated for the job. |
+| `-m` | No | `62` | Memory allocation in GB. |
+| `-d` | No | `1` | Number of days requested for job runtime. |
+| `-p` | Yes | — | Directory containing pathogen FASTA files. |
+| `-i` | Yes | — | Directory containing host FASTA files. |
+| `-l` | Yes | — | Directory containing AlphaFold3 model parameter files. |
+| `-f` | No | `0.5` | CD‑HIT sequence identity cutoff (range: 0.4–1.0). |
+| `-o` | No | `./AF3_out` | Output directory for AF3 results. |
+
 
 # Command‑Line Arguments for `prepare_json_from_fa.py`
 
 This script converts a FASTA file into a JSON specification compatible with AlphaFold Server workflows.  
 
-| Argument | Type | Required | Default | Description |
-|---------|------|----------|---------|-------------|
-| `--fa1_path` | `str` | Yes | — | Absolute path to FASTA file 1. Required for all runs. |
-| `--fa2_path` | `str` | No | `None` | Absolute path to FASTA file 2. If omitted, only proteins from FASTA 1 are used. |
-| `--len_cutoff` | `int` | No | `1000` | Threshold separating *short* vs. *long* sequences. Long sequences require more memory. Allowed range: 1–9999. |
-| `--protein1_cnt` | `int` | No | `1` | Number of copies of each protein from FASTA 1. Allowed range: 1–199. |
-| `--protein2_cnt` | `int` | No | `1` | Number of copies of each protein from FASTA 2. Allowed range: 1–199. |
-| `--num` | `int` | No | `30` | Number of protein–protein pairs per JSON file. Allowed range: 1–999,999. |
-| `--today` | `str` | No | `"20250501"` | Date stamp used to name output directories and JSON files. Should match earlier steps for reproducibility. |
-| `--out_dir` | `str` | No | `"./"` | Output directory where JSON files will be written. |
+| Argument | Required | Default | Description |
+|---------|----------|---------|-------------|
+| `--fa1_path` | Yes | — | Absolute path to FASTA file 1. Required for all runs. |
+| `--fa2_path` | No | `None` | Absolute path to FASTA file 2. If omitted, only proteins from FASTA 1 are used. |
+| `--len_cutoff` | No | `1000` | Threshold separating *short* vs. *long* sequences. Long sequences require more memory. Allowed range: 1–9999. |
+| `--protein1_cnt` |  No | `1` | Number of copies of each protein from FASTA 1. Allowed range: 1–199. |
+| `--protein2_cnt` | No | `1` | Number of copies of each protein from FASTA 2. Allowed range: 1–199. |
+| `--num` | No | `30` | Number of protein–protein pairs per JSON file. Allowed range: 1–999,999. |
+| `--today` | No | `"20250501"` | Date stamp used to name output directories and JSON files. Should match earlier steps for reproducibility. |
+| `--out_dir` | No | `"./"` | Output directory where JSON files will be written. |
 
 ---
 
