@@ -1,10 +1,28 @@
+# Project Overview
+
+SPIN: A Scalable Bioinformatics Pipeline for Screening Pathogenicity-Related Host-Pathogen Protein INteractions Using AlphaFold3
+
+SPIN provides a unified framework for protein structure prediction and interaction analysis using both institutional HPC (UF HiPerGator) and cloud-based AlphaFold workflows. It automates data preparation, JSON generation, and post-analysis for large scale protein-protein interaction screening.
+
+# Workflow Diagram
+
 <img width="3242" height="730" alt="image" src="https://github.com/user-attachments/assets/c6f3c978-a1dd-4fa9-9f0e-7099762c396c" />
 
+# 🔄Pipeline Stages
+SignalP: Predicts secreted proteins from pathogen sequences.  
+OrthoFinder: Identifies orthologous groups.  
+CD-HIT: Clusters proteins to reduce redundancy.  
+JSON Preparation: Generates input files for AlphaFold3.  
+AlphaFold3: Predicts protein-protein interactions.  
+Post-Analysis: Extracts and ranks interaction confidence scores.  
 
 
-# 🧬 Pathogen-Host Protein Interaction Analysis Pipeline
-
-This repository provides a comprehensive pipeline for analyzing pathogen-host protein interactions using a combination of bioinformatics tools and AlphaFold3. It includes scripts for preprocessing protein sequences, preparing input JSONs for AlphaFold3, running predictions, and summarizing the results.
+---
+# Key Features
+predict secreted proteins from pathogen
+Remove redundancy before AlphaFold 3 screening
+Automated JSON preparation for AlphaFold server integration
+Post-analysis tools for metrics extraction
 
 ---
 
@@ -81,13 +99,7 @@ python post_analysis.py \
 
 
 
-## 🔄Pipeline Stages
-SignalP: Predicts secreted proteins from pathogen sequences.  
-OrthoFinder: Identifies orthologous groups.  
-CD-HIT: Clusters proteins to reduce redundancy.  
-JSON Preparation: Generates input files for AlphaFold3.  
-AlphaFold3: Predicts protein-protein interactions.  
-Post-Analysis: Extracts and ranks interaction confidence scores.  
+
 
 ## 📬Contact
 For questions or contributions, please contact:
