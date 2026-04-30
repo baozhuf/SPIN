@@ -96,20 +96,6 @@ python post_analysis_AF3server.py \
 
 # 🧾 Script Argument Descriptions 
 
-(spin.sh)
-| Flag | Description |
-|------|-------------|
-| `-a` | Slurm account name (required) |
-| `-e` | Email for job notifications (required) |
-| `-c` | Number of CPUs (default: 4) |
-| `-m` | Memory in GB (default: 62) |
-| `-d` | Number of days for job runtime (default: 1) |
-| `-p` | Pathogen FASTA directory (required) |
-| `-i` | Host FASTA directory (required) |
-| `-l` | AlphaFold3 model parameter directory (required) |
-| `-f` | CD-HIT cutoff (range: 0.4–1.0, default: 0.5) |
-| `-o` | Output directory (default: `./AF3_out`) |
-
 # Command‑Line Arguments for `spin.sh`
 
 This SLURM‑based wrapper script launches the SPIN pipeline on UF HiPerGator.  
@@ -119,12 +105,12 @@ It configures compute resources, input FASTA directories, AlphaFold3 model param
 |------|----------|---------|-------------|
 | `-a` | Yes | — | SLURM account name used for job submission. |
 | `-e` | Yes | — | Email address for SLURM job notifications. |
-| `-c` | No | `4` | Number of CPUs allocated for the job. |
-| `-m` | No | `62` | Memory allocation in GB. |
-| `-d` | No | `1` | Number of days requested for job runtime. |
 | `-p` | Yes | — | Directory containing pathogen FASTA files. |
 | `-i` | Yes | — | Directory containing host FASTA files. |
 | `-l` | Yes | — | Directory containing AlphaFold3 model parameter files. |
+| `-c` | No | `4` | Number of CPUs allocated for the job. |
+| `-m` | No | `62` | Memory allocation in GB. |
+| `-d` | No | `1` | Number of days requested for job runtime. |
 | `-f` | No | `0.5` | CD‑HIT sequence identity cutoff (range: 0.4–1.0). |
 | `-o` | No | `./AF3_out` | Output directory for AF3 results. |
 
