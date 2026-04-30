@@ -81,12 +81,12 @@ python prepare_json_from_fa.py \
 
 ## Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM, ipSAE, pDockQ)
 
-## AlphaFold3 outputs obtained from UF HiPerGator 
+**AlphaFold3 outputs obtained from UF HiPerGator** 
 python post_analysis.py \
   --af3_out_dir ./AF3_out \
   --summary_path ./AF3_out/af3_results_summary.csv
 
-## AlphaFold3 outputs obtained from alphafoldserver.com
+** AlphaFold3 outputs obtained from alphafoldserver.com **
 python post_analysis_AF3server.py \
   --af3_out_dir ./AF3_out \
   --summary_path ./AF3_out/af3_results_summary.csv
