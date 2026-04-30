@@ -20,10 +20,10 @@ Post-Analysis: Extracts and ranks interaction confidence scores.
 
 ---
 # Key Features
-predict secreted proteins from pathogen
-Remove redundancy before AlphaFold 3 screening
-Automated JSON preparation for AlphaFold server integration
-Post-analysis tools for metrics extraction
+- predict secreted proteins from pathogen
+- Remove redundancy before AlphaFold 3 screening
+- Automated JSON preparation for AlphaFold server integration
+- Post-analysis tools for metrics extraction
 
 ---
 
@@ -92,7 +92,7 @@ python post_analysis_AF3server.py \
   --summary_path ./AF3_out/af3_results_summary.csv
 
 
-# 🧾 Script Argument Descriptions (all_in_one_final.sh)
+# 🧾 Script Argument Descriptions (spin.sh)
 | Flag | Description |
 |------|-------------|
 | `-a` | Slurm account name (required) |
