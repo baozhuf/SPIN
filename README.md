@@ -1,10 +1,10 @@
-# Project Overview
+## 🗂️ Project Overview
 
 SPIN: A Scalable Bioinformatics Pipeline for Screening Pathogenicity-Related Host-Pathogen Protein INteractions Using AlphaFold3
 
 SPIN provides a unified framework for protein structure prediction and interaction analysis using both institutional HPC (UF HiPerGator) and cloud-based AlphaFold workflows. It automates data preparation, JSON generation, and post-analysis for large scale protein-protein interaction screening.
 
-# 🔄 Workflow Diagram
+## 🔄 Workflow Diagram
 
 <img width="3242" height="730" alt="image" src="https://github.com/user-attachments/assets/c6f3c978-a1dd-4fa9-9f0e-7099762c396c" />
 
@@ -19,7 +19,7 @@ Post-Analysis: Extracts and ranks interaction confidence scores.
 
 
 ---
-# Key Features
+## ✨ Key Features
 - predict secreted proteins from pathogen
 - Remove redundancy before AlphaFold 3 screening
 - Automated JSON preparation for AlphaFold server integration
@@ -36,7 +36,7 @@ Post-Analysis: Extracts and ranks interaction confidence scores.
 
 ---
 
-# ⚙️ Prerequisites
+## ⚙️ Prerequisites
 
 - Python 3.x
 - Slurm Workload Manager
@@ -49,17 +49,17 @@ Post-Analysis: Extracts and ranks interaction confidence scores.
 - pandas
 
 
-# 🚀 Installation
+## 🚀 Installation
 Clone the repository:
 
 git clone https://github.com/baozhuf/spin.git
 
 cd spin
 
-# 🧪 Usage
+## 🧪 Usage
 <img width="1622" height="499" alt="image" src="https://github.com/user-attachments/assets/d1514c16-4c61-4bf9-8a25-465498447fc3" />
 
-## Scenario 1. Run the Full Pipeline with Slurm on UF HiPerGator computing platform
+### Scenario 1. Run the Full Pipeline with Slurm on UF HiPerGator computing platform
 bash spin.sh \
   -a your_slurm_account \
   -e your_email@ufl.edu \
@@ -69,7 +69,7 @@ bash spin.sh \
   -f 0.5 \
   -o ./AF3_out
 
-## Scenario 2. You only want to Prepare JSONs for AlphaFold3 on alphafoldserver.com
+### Scenario 2. You only want to Prepare JSONs for AlphaFold3 on alphafoldserver.com
 python prepare_json_from_fa.py \
   --fa1_path path/to/pathogen.fa \
   --fa2_path path/to/host.fa \
@@ -82,7 +82,7 @@ python prepare_json_from_fa.py \
 Docker image for JSON preparation is available at
 https://hub.docker.com/r/harshkhanna1304/spin-preprocessing 
 
-## Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM, ipSAE, pDockQ)
+### Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM, ipSAE, pDockQ)
 
 **AlphaFold3 outputs obtained from UF HiPerGator**
 
@@ -97,9 +97,9 @@ python post_analysis_AF3server.py \
   --summary_path ./AF3_out/af3_results_summary.csv
 
 
-# 🧾 Script Argument Descriptions 
+## 🧾 Script Argument Descriptions 
 
-# Command‑Line Arguments for `spin.sh`
+### Command‑Line Arguments for `spin.sh`
 
 This SLURM‑based wrapper script launches the SPIN pipeline on UF HiPerGator.  
 It configures compute resources, input FASTA directories, AlphaFold3 model parameters, and output locations.
@@ -118,7 +118,7 @@ It configures compute resources, input FASTA directories, AlphaFold3 model param
 | `-o` | No | `./AF3_out` | Output directory for AF3 results. |
 
 
-# Command‑Line Arguments for `prepare_json_from_fa.py`
+### Command‑Line Arguments for `prepare_json_from_fa.py`
 
 This script converts a FASTA file into a JSON specification compatible with AlphaFold Server workflows.  
 
@@ -135,16 +135,16 @@ This script converts a FASTA file into a JSON specification compatible with Alph
 
 ---
 
-# Reference
+## 🔗 Reference
 
 bioRxiv 2026.04.21.719732; doi: https://doi.org/10.64898/2026.04.21.719732
 
-# 📬Contact
+## 📬Contact
 For questions or collaboration inquiries, please contact:
 Zhenghong Bao
 📧 z.bao@ufl.edu
 
 
-# 📄 License
+## 📄 License
 This project is licensed under the MIT License.
 
