@@ -28,22 +28,22 @@ This repository provides a comprehensive pipeline for analyzing pathogen-host pr
 ## 🚀 Installation
 Clone the repository:
 
-git clone https://github.com/baozhuf/af3_assist.git
+git clone https://github.com/baozhuf/spin.git
 
-cd af3_assist
+cd spin
 
 ## 🧪 Usage
-### Scenario 1. Run the Full Pipeline with Slurm
+### Scenario 1. Run the Full Pipeline with Slurm on UF HiPerGator computing platform
 bash all_in_one_final.sh \
   -a your_slurm_account \
-  -e your_email@example.com \
+  -e your_email@ufl.edu \
   -p ./pathogen_fasta_dir \
   -i ./host_fasta_dir \
   -l /path/to/af3_model_parameters \
   -f 0.5 \
   -o ./AF3_out
 
-### Scenario 2. You only want to Prepare JSONs for AlphaFold3 on alphafoldserver.com
+### Scenario 2. You only want to Prepare JSONs for AlphaFold3 on  HiPerGator or alphafoldserver.com
 python prepare_json_from_fa.py \
   --fa1_path path/to/pathogen.fa \
   --fa2_path path/to/host.fa \
@@ -53,7 +53,7 @@ python prepare_json_from_fa.py \
   --today 20250501 \
   --out_dir ./output_jsons
 
-### Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM)
+### Scenario 3. You only want to Run Post-Analysis to extract AlphaFold3 metrics (pTM, ipTM, ipSAE, pDockQ)
 python post_analysis.py \
   --af3_out_dir ./AF3_out \
   --summary_path ./AF3_out/af3_results_summary.csv
