@@ -1,3 +1,8 @@
+<img width="1621" height="499" alt="image" src="https://github.com/user-attachments/assets/861b31f2-d76b-4728-886f-93633a5aed5f" />
+
+
+
+
 # 🧬 Pathogen-Host Protein Interaction Analysis Pipeline
 
 This repository provides a comprehensive pipeline for analyzing pathogen-host protein interactions using a combination of bioinformatics tools and AlphaFold3. It includes scripts for preprocessing protein sequences, preparing input JSONs for AlphaFold3, running predictions, and summarizing the results.
