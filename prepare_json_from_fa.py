@@ -185,15 +185,16 @@ def prep_json_multimer(fa1_path, fa2_path=None, length_cutoff=1000, protein1_cou
 
 
 # 3 prepare json files
-# get the options
-opts = get_args()
-fa1_path=opts.fa1_path
-fa2_path=opts.fa2_path
-len_cutoff=opts.len_cutoff
-protein1_count=opts.protein1_cnt
-protein2_count=opts.protein2_cnt
-n=opts.num
-today=opts.today
-out_dir=opts.out_dir
-
-prep_json_multimer(fa1_path, fa2_path, len_cutoff, protein1_count, protein2_count, n, today, out_dir)
+if __name__ == "__main__":
+    # get the options
+    opts = get_args()
+    fa1_path=opts.fa1_path
+    fa2_path=opts.fa2_path
+    len_cutoff=opts.len_cutoff
+    protein1_count=opts.protein1_cnt
+    protein2_count=opts.protein2_cnt
+    n=opts.num
+    today=opts.today
+    out_dir=opts.out_dir
+    
+    prep_json_multimer(fa1_path, fa2_path, len_cutoff, protein1_count, protein2_count, n, today, out_dir)
