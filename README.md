@@ -5,14 +5,14 @@ SPIN: A Scalable Bioinformatics Pipeline for Screening Pathogenicity-Related Hos
 SPIN provides a unified framework for protein structure prediction and interaction analysis using both institutional HPC (UF HiPerGator) and cloud-based AlphaFold workflows. It automates data preparation, JSON generation, and post-analysis for large scale protein-protein interaction screening.
 
 ## 🔄 Workflow Diagram
-
-<img width="3242" height="730" alt="image" src="https://github.com/user-attachments/assets/c6f3c978-a1dd-4fa9-9f0e-7099762c396c" />
+<img width="2627" height="590" alt="image" src="https://github.com/user-attachments/assets/e38c22b1-b5a1-4306-a590-e850680dc566" />
 
 **Pipeline Stages**
 
 SignalP: Predicts secreted proteins from pathogen sequences.  
 OrthoFinder: Identifies orthologous groups.  
 CD-HIT: Clusters proteins to reduce redundancy.  
+Seqtk strimfq: remove the signal peptide from predicted secreted proteins.  
 JSON Preparation: Generates input files for AlphaFold3.  
 AlphaFold3: Predicts protein-protein interactions.  
 Post-Analysis: Extracts and ranks interaction confidence scores.  
@@ -20,10 +20,11 @@ Post-Analysis: Extracts and ranks interaction confidence scores.
 
 ---
 ## ✨ Key Features
-- predict secreted proteins from pathogen
+- Predict secreted proteins from pathogen
 - Remove redundancy before AlphaFold 3 screening
 - Automated JSON preparation for AlphaFold server integration
 - Post-analysis tools for metrics extraction
+- All-in-one mold is available for slurm HPC platform
 
 ---
 
